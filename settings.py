@@ -7,6 +7,7 @@ BASEDIR = os.path.dirname(__file__)
 
 CONFIG = {
     'template_path': os.path.join(BASEDIR, 'templates'),
+    'static_path': os.path.join(BASEDIR, 'static'),
     'debug': False
 }
 
