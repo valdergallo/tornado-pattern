@@ -6,11 +6,14 @@ from tornado.options import options
 from urls import routes
 import settings
 
-define("port", default=8000, help="run on the given port", type=int)
+define("port", default=8888, help="run on the given port", type=int)
 
-application = tornado.web.Application(routes, **settings.CONFIG)
-
-if __name__ == "__main__":
+def main():
+    application = tornado.web.Application(routes, **settings.CONFIG)
     tornado.options.parse_command_line()
     application.listen(options.port)
     tornado.ioloop.IOLoop.instance().start()
+
+if __name__ == "__main__":
+    main()
+
